@@ -1,3 +1,5 @@
+![Dune](public/background.jpg)
+
 # Финальное испытание
 
 ## Пролог
