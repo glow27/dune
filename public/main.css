@@ -1,6 +1,7 @@
 body {
   background-image: url('background.jpg');
   background-repeat: no-repeat;
-  background-size: 200%;
+  background-size: cover;
+  height: 98vh;
   background-position: top center;
 }
