@@ -7,11 +7,13 @@ import { Welcom } from '../welcom';
 import { Worm } from '../Worm/index';
 import { Picture } from '../picture';
 import { Parrot } from '../parrot/parrot';
+import style from '../navbar.module.css';
 
 export const WormsContext = createContext();
 
 export const Arrakis = () => {
   return (
+    <div className={style.center}>
     <WormsContext.Provider value={worms}>
       <Router>
         <Navbar />
@@ -35,5 +37,6 @@ export const Arrakis = () => {
         </Switch>
       </Router>
     </WormsContext.Provider>
+    </div>
   );
 };

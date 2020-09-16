@@ -1,6 +1,10 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducer from './reducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk'
 
-const initialState = '';
+const initialState = {word: '', pic: null, loading: true};
 
-export const store = createStore(reducer, initialState);
+const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunk)));
+
+export default store;

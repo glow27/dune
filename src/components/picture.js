@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadPic } from '../redux/actions';
+import {Spinner} from './spinner';
+
 
 export const Picture = () => {
-  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+  const pic = useSelector((state) => state.pic);
+  const load = useSelector((state) => state.loading);
+  
 
   useEffect(() => {
-    fetch('https://api.thecatapi.com/v1/images/search')
-      .then((res) => res.json())
-      .then((json) => setData(json[0]));
-  }, [setData]);
+    dispatch(loadPic());
+  }, [dispatch]);
 
   return (
-    <div>{data && <img src={data.url} width="600" height="500" alt="cat"></img>}</div>
+    <div>
+      {load ? <Spinner/> : <img src={pic[0].url} width="600" height="500" alt="cat"></img>}
+    </div>
   );
 };

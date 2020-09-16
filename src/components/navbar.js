@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <div className={style.nav}>
-      <Nav>
+    <div>
+      <Nav  className={style.navb}>
         <Link to="/">
           <b>Главная</b>
         </Link>
